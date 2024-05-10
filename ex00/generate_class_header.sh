@@ -28,7 +28,8 @@ cat << EOF > "$class_name.hpp"
 
 #include <iostream>
 
-class $class_name {
+class $class_name
+{
 	private:
 	    	// Private members
 
