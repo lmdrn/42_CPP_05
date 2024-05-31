@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:06:16 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/31 11:12:53 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/05/31 13:44:48 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,11 @@
 #include "GradeTooLowException.hpp"
 #include "GradeTooHighException.hpp"
 
+class Form;
+
 class Bureaucrat 
 {
 	private:
-	    	// Private members
 		const std::string	_name;
 		int			_grade;
 	public:
@@ -50,6 +51,8 @@ class Bureaucrat
 		//Methods
 		void		incrementGrade(void);
 		void 		decrementGrade(void);
+		void		signForm(Form& f);
+
 };
 
 // Overload of the insertion operator

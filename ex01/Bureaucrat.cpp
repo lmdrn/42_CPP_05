@@ -6,11 +6,12 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:24:13 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/31 11:15:05 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/05/31 13:51:19 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 // Constructor
 Bureaucrat::Bureaucrat()
@@ -86,6 +87,14 @@ void	Bureaucrat::decrementGrade(void)
 	else
 		_grade++;
 	std::cout << PURPLE << "Ow Naaaaur, Level down! Grade is now: " << _grade << RESET << std::endl;
+}
+
+void	Bureaucrat::signForm(Form& f)
+{
+	if (f.beSigned(*this) == true)
+		std::cout << GREEN << _name << " signed " << f.getName() << RESET << std::endl;
+	else
+		std::cout << RED << _name << " could not sign " << f.getName() << RESET << std::endl;
 }
 
 // Definition of the overloaded insertion operator
