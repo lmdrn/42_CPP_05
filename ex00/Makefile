@@ -15,11 +15,13 @@ ORANGE 		= \033[38;5;215m
 GREEN 		= \033[38;5;82m
 RESET 		= \033[0m
 
-SRCS 		= main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS 		= main.cpp Bureaucrat.cpp
+
+DEPS 		= Bureaucrat.hpp
 
 OBJS 		= ${SRCS:.cpp=.o}
 
-NAME		= catsndogs
+NAME		= bureau
 
 CC 			= c++
 
@@ -45,7 +47,7 @@ ${NAME}:	${OBJS}
 			${CC} ${CFLAGS} ${OBJS} -o ${NAME}
 			@echo "$(RESET)$(GREEN)$(NAME) HAS ASSEMBLED ✓$(RESET)"
 
-%.o: 		%.cpp
+%.o: 		%.cpp $(DEPS)
 		$(CC) $(CFLAGS) -c $< -o $@
 
 clean:		
