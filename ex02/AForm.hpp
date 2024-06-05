@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:24:01 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/31 16:09:47 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:21:26 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 #define PURPLE "\x1b[35m"
 
 #include <iostream>
-#include <fstream>
 #include "GradeTooLowException.hpp"
 #include "GradeTooHighException.hpp"
+#include "FormNotSignedException.hpp"
 
 class Bureaucrat;
 
@@ -39,6 +39,8 @@ class AForm
 	public:
 		//Constructor
 		AForm(const std::string& name, int sign, int exec);
+		AForm(const AForm &copy);
+		AForm &operator=(const AForm &copy);
     		// Destructor
     		virtual ~AForm();
 

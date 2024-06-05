@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 15:57:52 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/31 16:08:26 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:39:37 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,28 +20,17 @@
 #define PURPLE "\x1b[35m"
 
 #include <iostream>
+#include <fstream>
 #include "AForm.hpp"
 
 class ShrubberyCreationForm: public AForm
 {
 	private:
 		std::string	_target;
-		void		doSmth() const;
 
 	public:
-    		// Constructor
     		ShrubberyCreationForm(const std::string& target);
-
-    		// Destructor
-    		~ShrubberyCreationForm();
-
-    		// Copy Constructor
-    		ShrubberyCreationForm(const ShrubberyCreationForm& copy);
-
-    		// Copy Assignment Operator
-    		ShrubberyCreationForm& operator=(const ShrubberyCreationForm& copy);
-		
-		//methods
+    		virtual ~ShrubberyCreationForm();
 		void	execute(const Bureaucrat& executor) const;
 };
 

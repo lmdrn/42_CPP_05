@@ -6,12 +6,12 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:24:13 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/05/31 13:51:19 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/05 16:36:31 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
 // Constructor
 Bureaucrat::Bureaucrat()
@@ -89,7 +89,7 @@ void	Bureaucrat::decrementGrade(void)
 	std::cout << PURPLE << "Ow Naaaaur, Level down! Grade is now: " << _grade << RESET << std::endl;
 }
 
-void	Bureaucrat::signForm(Form& f)
+void	Bureaucrat::signForm(AForm& f)
 {
 	if (f.beSigned(*this) == true)
 		std::cout << GREEN << _name << " signed " << f.getName() << RESET << std::endl;
