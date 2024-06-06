@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/10 12:24:13 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/05 16:36:31 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:03:00 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,10 +91,28 @@ void	Bureaucrat::decrementGrade(void)
 
 void	Bureaucrat::signForm(AForm& f)
 {
-	if (f.beSigned(*this) == true)
-		std::cout << GREEN << _name << " signed " << f.getName() << RESET << std::endl;
-	else
-		std::cout << RED << _name << " could not sign " << f.getName() << RESET << std::endl;
+	try
+	{
+		if (f.beSigned(*this) == true)
+			std::cout << GREEN << _name << " signed " << f.getName() << RESET << std::endl;
+	}
+	catch (std::exception &error)
+	{
+		std::cout << RED << _name << " could not sign " << f.getName() << ", Error: " << error.what() << RESET << std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm& f)
+{
+	try
+	{
+		f.execute(*this);
+		std::cout << GREEN << _name << " executed " << f.getName() << RESET << std::endl;
+	}
+	catch (std::exception &error)
+	{
+		std::cout << RED << _name << " could not execute " << f.getName() << ", Error: " << error.what() << RESET << std::endl;
+	}
 }
 
 // Definition of the overloaded insertion operator

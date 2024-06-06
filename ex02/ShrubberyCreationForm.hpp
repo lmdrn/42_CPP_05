@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 15:57:52 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/05 16:39:37 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:15:40 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,21 @@ class ShrubberyCreationForm: public AForm
 		std::string	_target;
 
 	public:
+		//Constructor
     		ShrubberyCreationForm(const std::string& target);
-    		virtual ~ShrubberyCreationForm();
-		void	execute(const Bureaucrat& executor) const;
+		//Operator
+		ShrubberyCreationForm &operator=(const ShrubberyCreationForm &copy);
+		//Copy
+		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
+		//Destructor
+    		~ShrubberyCreationForm();
+		//Getters
+		std::string	getTarget(void) const;
+		//Methods
+		void		execute(const Bureaucrat& executor) const;
 };
+
+// Overload of the insertion operator
+std::ostream& operator<<(std::ostream& os, const ShrubberyCreationForm& f);
 
 #endif /* SHRUBBERYCREATIONFORM_HPP */

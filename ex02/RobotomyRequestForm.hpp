@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:40:29 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/05 17:01:45 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:13:31 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,21 @@ class RobotomyRequestForm : public AForm
 		std::string	_target;
 
 	public:
+		//Constructor
     		RobotomyRequestForm(const std::string& target);
-    		virtual ~RobotomyRequestForm();
-		void	execute(const Bureaucrat& executor) const;
+		//Operator
+		RobotomyRequestForm &operator=(const RobotomyRequestForm &copy);
+		//Copy
+		RobotomyRequestForm(const RobotomyRequestForm &copy);
+		//Destructor
+    		~RobotomyRequestForm();
+		//Getters
+		std::string	getTarget(void) const;
+		//Methods
+		void		execute(const Bureaucrat& executor) const;
 };
+
+// Overload of the insertion operator
+std::ostream& operator<<(std::ostream& os, const RobotomyRequestForm& f);
 
 #endif /* ROBOTOMYREQUESTFORM_HPP */

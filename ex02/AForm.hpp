@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:24:01 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/05 16:21:26 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/06 11:57:07 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,6 @@ class Bureaucrat;
 
 class AForm
 {
-	protected:
-		virtual void		doSmth(void) const = 0;
 	private:
 		std::string const	_name;
 		bool			_isSigned;
@@ -39,10 +37,10 @@ class AForm
 	public:
 		//Constructor
 		AForm(const std::string& name, int sign, int exec);
-		AForm(const AForm &copy);
 		AForm &operator=(const AForm &copy);
+		AForm(const AForm &copy);
     		// Destructor
-    		virtual ~AForm();
+    		virtual ~AForm() = 0;
 
 		//Getters
 		std::string	getName(void) const;
@@ -52,7 +50,7 @@ class AForm
 
 		//Methods
 		bool		beSigned(Bureaucrat& b);
-		virtual void	execute(Bureaucrat& executor) const = 0;
+		virtual void	execute(const Bureaucrat& executor) const = 0;
 };
 
 // Overload of the insertion operator

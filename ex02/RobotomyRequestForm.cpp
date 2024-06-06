@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:40:27 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/05 17:01:32 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/06 12:14:20 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,38 @@
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
 : AForm("Shrubbery Creation", 145, 137), _target(target)
 {
+	if (getGradeSign() < 1 || getGradeExec() < 1)
+		throw GradeTooHighException();
+	else if (getGradeSign() > 150 || getGradeExec() > 150)
+		throw GradeTooLowException();
+	else
 	std::cout << getName() << "is initialized" << std::endl;
+}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
+: AForm(copy.getName(), copy.getGradeSign(), copy.getGradeExec()), _target(copy.getTarget())
+{
+	*this = copy;
+}
+
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm &copy)
+{
+	if (this != &copy)
+	{
+	}
+	return (*this);
 }
 
 // Destructor
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 	std::cout << "RobotomyRequestForm destroyed" << std::endl;
+}
+
+//Getters
+std::string	RobotomyRequestForm::getTarget(void) const
+{
+	return (this->_target);
 }
 
 //methods
@@ -42,4 +67,15 @@ void	RobotomyRequestForm::execute(const Bureaucrat& executor) const
 	{
 		std::cout << "The robotomy failed" << std::endl;
 	}
+}
+
+std::ostream& operator<<(std::ostream& os, const RobotomyRequestForm& f) {
+    os << "Robotomy Request Form: Target = " << f.getTarget() << ", Grade to sign = " << f.getGradeSign() 
+       << ", Grade to execute = " << f.getGradeExec();
+    if (f.getSignature()) {
+        os << " (Signed)";
+    } else {
+        os << " (Not signed)";
+    }
+    return os;
 }
