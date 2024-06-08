@@ -57,7 +57,7 @@ void	PresidentialPardonForm::execute(const Bureaucrat& executor) const
 		throw FormNotSignedException();
 	if (executor.getGrade() > getGradeExec())
 		throw GradeTooLowException();
-	std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
+	std::cout << PURPLE << _target << " has been pardoned by Zaphod Beeblebrox" << RESET << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const PresidentialPardonForm& f) {

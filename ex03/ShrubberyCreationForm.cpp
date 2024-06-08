@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 15:57:38 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/06 12:15:16 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/08 18:09:32 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
 	else if (getGradeSign() > 150 || getGradeExec() > 150)
 		throw GradeTooLowException();
 	else
-		std::cout << GREEN << getName() << "initialized" << std::endl; 
+		std::cout << GREEN << getName() << " initialized" << std::endl; 
 	std::srand(std::time(NULL));
 }
 

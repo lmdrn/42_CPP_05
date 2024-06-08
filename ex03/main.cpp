@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:07:09 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/06 11:50:13 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/08 18:13:49 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int main(void)
 {
@@ -70,10 +71,48 @@ int main(void)
 		bob.executeForm(shrubForm);
 		std::cout << " " << std::endl;
 		alice.executeForm(shrubForm);
+		std::cout << " " << std::endl;
+
+		Intern intern;
+
+		std::cout << " " << std::endl;
+		AForm* form1 = intern.makeForm("Shrubbery Creation", "garden");
+		if (form1) 
+		{
+			delete form1;
+		}
+		std::cout << " " << std::endl;
+
+		std::cout << " " << std::endl;
+		AForm* form2 = intern.makeForm("Robotomy Request", "robot");
+		if (form2) 
+		{
+			delete form2;
+		}
+		std::cout << " " << std::endl;
+
+		std::cout << " " << std::endl;
+		AForm* form3 = intern.makeForm("Presidential Pardon", "president");
+		if (form3) 
+		{
+			delete form3;
+		}
+		std::cout << " " << std::endl;
+
+		std::cout << " " << std::endl;
+		// This will print an error message
+		AForm* form4 = intern.makeForm("unknown form", "unknown");
+		if (form4)
+		{
+			delete form4;
+		}
+		std::cout << " " << std::endl;
 	}
 	catch (std::exception& e)
 	{
+		std::cout << " " << std::endl;
 		std::cerr << RED << "Error : " << e.what() << RESET << std::endl;
+		std::cout << " " << std::endl;
 	}
 	return (0);
 }

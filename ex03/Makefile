@@ -6,7 +6,7 @@
 #    By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/09 10:48:23 by lmedrano          #+#    #+#              #
-#    Updated: 2024/06/06 10:35:56 by lmedrano         ###   ########.fr        #
+#    Updated: 2024/06/08 17:00:13 by lmedrano         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,12 @@ GREEN 		= \033[38;5;82m
 RESET 		= \033[0m
 
 SRCS 		= main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
-		  RobotomyRequestForm.cpp ShrubberyCreationForm.cpp
+		  RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
 
 DEPS 		= Bureaucrat.hpp Form.hpp GradeTooHighException.hpp \
 		  GradeTooLowException.hpp FormNotSigned.hpp \
-		  RobotomyRequestForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp
+		  RobotomyRequestForm.hpp ShrubberyCreationForm.hpp PresidentialPardonForm.hpp \
+		  UnknownFormException.hpp Intern.hpp
 
 OBJS 		= ${SRCS:.cpp=.o}
 

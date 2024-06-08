@@ -1,4 +1,8 @@
 ex00/generate_class_header.sh
 ex01/generate_class_header.sh
+ex02/generate_class_header.sh
+ex03/generate_class_header.sh
 ex00/*.o
 ex01/*.o
+ex02/*.o
+ex03/*.o

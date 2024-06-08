@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:40:27 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/06 12:14:20 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/08 18:09:46 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
 	else if (getGradeSign() > 150 || getGradeExec() > 150)
 		throw GradeTooLowException();
 	else
-	std::cout << getName() << "is initialized" << std::endl;
+	std::cout << getName() << " is initialized" << std::endl;
 }
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy)
