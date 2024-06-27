@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 15:56:05 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/06 12:16:22 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/27 10:19:24 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ bool		AForm::beSigned(Bureaucrat& b)
 		return (_isSigned = true);
 	}
 	else
-		return (_isSigned = false);
+		throw GradeTooLowException();
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& form) {
