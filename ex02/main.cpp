@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/31 11:07:09 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/06 11:50:13 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/27 10:23:06 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,8 @@ int main(void)
 		alice.signForm(presidentForm);
 		alice.executeForm(presidentForm);
 
-		// Bob tries to sign ShruberryCreationForm (ok) and executes (fails) 
-		// Qlice tries to executes ShruberryCreationForm
+		// Bob tries to sign ShruberryCreationForm (ok) and executes (ok) 
+		// Alice tries to executes ShruberryCreationForm
 		std::cout << " " << std::endl;
 		bob.signForm(shrubForm);
 		bob.executeForm(shrubForm);
