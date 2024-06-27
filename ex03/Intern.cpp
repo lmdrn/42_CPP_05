@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:42:05 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/27 10:05:38 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/27 10:44:07 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ AForm*	Intern::makeForm(const std::string& formName, const std::string& targetNa
 	{
 		if (form[i]._name == formName)
 		{
-			std::cout << PURPLE << "Intern created " << formName << RESET << std::endl;
+			std::cout << PURPLE << "Intern created " << formName << " with target name " << targetName << RESET << std::endl;
 			return ((this->*form[i].creationFunction)(targetName));
 		}
 	}

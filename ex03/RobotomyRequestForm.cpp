@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 16:40:27 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/08 18:09:46 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/27 10:28:05 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // Constructor
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
-: AForm("Robotomy Request", 145, 137), _target(target)
+: AForm("Robotomy Request", 72, 45), _target(target)
 {
 	if (getGradeSign() < 1 || getGradeExec() < 1)
 		throw GradeTooHighException();

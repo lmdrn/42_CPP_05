@@ -6,7 +6,7 @@
 /*   By: lmedrano <lmedrano@student.42lausanne.ch>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/08 15:35:52 by lmedrano          #+#    #+#             */
-/*   Updated: 2024/06/08 18:06:04 by lmedrano         ###   ########.fr       */
+/*   Updated: 2024/06/27 10:41:43 by lmedrano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,5 @@ class Intern
 		//Methods
 		AForm*	makeForm(const std::string& formName, const std::string& targetName);
 };
-
-// Overload of the insertion operator
-std::ostream& operator<<(std::ostream& os, const Intern& intern);
 
 #endif /* INTERN_HPP */
